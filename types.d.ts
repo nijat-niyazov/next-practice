@@ -1,6 +1,6 @@
 type Post = {
   id: number;
-  userİd: number;
+  userId: number;
   body: string;
   title: string;
 };
@@ -8,7 +8,6 @@ type Post = {
 type User = {
   id: number;
   name: string;
-  title: string;
   username: string;
   email: string;
   address: {
