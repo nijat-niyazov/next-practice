@@ -2,9 +2,9 @@ import { getAllUsers } from '@/app/lib';
 import getUser from '@/app/lib/getUser';
 import getUserPosts from '@/app/lib/getUserPosts';
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { FC, Suspense } from 'react';
 import UserPosts from './components/UserPosts';
-import { notFound } from 'next/navigation'
 
 // ! folder name must be param that will be used
 
@@ -46,8 +46,7 @@ const UserPage: FC<Params> = async ({ params: { userId } }) => {
 
   const user = await userData;
 
-  if(!user?.name) return notFound()
-
+  if (!user?.name) return notFound();
 
   return (
     <div>
@@ -71,4 +70,5 @@ export const generateStaticParams = async () => {
     userId: user.id.toString(),
   }));
   // in our User id is number that's why we return by map as string
+  // this makes page SSG
 };
