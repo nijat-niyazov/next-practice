@@ -9,7 +9,7 @@ export default async function getUserPosts(userId: string) {
       //  cache: 'no-store'
       // ? this is for not caching data and always dynamic data
 
-      next: { revalidate: 60 },
+      // next: { revalidate: 60 },
       // * refresh data to check if there is an update for each 60 seconds can be applied to ssg || ssr
     }
   );

@@ -46,7 +46,10 @@ const UserPage: FC<Params> = async ({ params: { userId } }) => {
 
   const user = await userData;
 
+  console.log('okay', user.id);
+
   if (!user?.name) return notFound();
+
 
   return (
     <div>
@@ -70,5 +73,5 @@ export const generateStaticParams = async () => {
     userId: user.id.toString(),
   }));
   // in our User id is number that's why we return by map as string
-  // this makes page SSG
+  // * this makes page SSG
 };
