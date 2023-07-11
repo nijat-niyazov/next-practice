@@ -1,8 +1,9 @@
 'use client';
+
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import Input from '../components/Input';
-import { useRouter } from 'next/navigation';
 
 const initialState = {
   name: '',
@@ -12,11 +13,9 @@ const initialState = {
 
 const Feedback = () => {
   const [formData, setFormData] = useState(initialState);
-  const router = useRouter()
+  const router = useRouter();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    // console.log();
-
     setFormData(prevData => ({ ...prevData, [e.target.name]: e.target.value }));
   };
 
@@ -32,7 +31,7 @@ const Feedback = () => {
 
     console.log(res.data);
 
-    router.push(`/thank-you`)
+    router.push(`/thank-you`);
   };
 
   return (
