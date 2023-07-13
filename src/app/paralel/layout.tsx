@@ -8,8 +8,11 @@ const ParalelLayout = (props: {
   return (
     <div className="flex gap-2">
       {props.leftRoute}
+      {/* // ? They must be same with folder name  */}
       {props.children}
+      {/* // ? Children all nested pages  */}
       {props.rightRoute}
+      {/* // ? They must be same with folder name  */}
     </div>
   );
 };
